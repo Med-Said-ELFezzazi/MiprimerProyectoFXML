@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
@@ -49,7 +50,7 @@
       <TextField fx:id="txtOperador1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <TextField fx:id="txtOperador2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <TextField fx:id="txtResultado" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-      <Button alignment="CENTER" mnemonicParsing="false" onAction="#calcular" text="Calcular" textFill="#063ec4" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+      <Button fx:id="btnCalcular" alignment="CENTER" mnemonicParsing="false" onAction="#calcular" text="Calcular" textFill="#063ec4" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <GridPane.margin>
             <Insets />
          </GridPane.margin>
@@ -61,14 +62,17 @@
       </Label>
       <FlowPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
          <children>
-            <RadioButton fx:id="rdSumar" mnemonicParsing="false" text="Sumar" />
-            <RadioButton fx:id="rdRestar" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Restar" />
+            <RadioButton fx:id="rbSumar" mnemonicParsing="false" text="Sumar">
+               <toggleGroup>
+                  <ToggleGroup fx:id="tgOperacion" />
+               </toggleGroup></RadioButton>
+            <RadioButton fx:id="rbRestar" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Restar" toggleGroup="$tgOperacion" />
          </children>
       </FlowPane>
       <FlowPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="5">
          <children>
-            <RadioButton fx:id="rdMultiplicar" mnemonicParsing="false" text="Multiplicar" />
-            <RadioButton fx:id="rdDividir" mnemonicParsing="false" text="Dividir" />
+            <RadioButton fx:id="rbMultiplicar" mnemonicParsing="false" text="Multiplicar" toggleGroup="$tgOperacion" />
+            <RadioButton fx:id="rbDividir" mnemonicParsing="false" text="Dividir" toggleGroup="$tgOperacion" />
          </children>
       </FlowPane>
    </children>
