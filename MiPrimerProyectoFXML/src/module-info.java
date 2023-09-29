@@ -1,4 +1,4 @@
-module PrimerProyectoFXML{
+module MiPrimerProyectoFXML{
 	requires javafx.controls;
 	requires java.desktop;
 	requires javafx.web;
