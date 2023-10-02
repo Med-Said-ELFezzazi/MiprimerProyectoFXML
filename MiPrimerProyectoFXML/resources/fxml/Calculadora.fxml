@@ -6,13 +6,15 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CalculadoraController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="393.0" prefWidth="602.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CalculadoraController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="281.0" minWidth="10.0" prefWidth="223.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="377.0" minWidth="10.0" prefWidth="377.0" />
@@ -25,17 +27,24 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
       <Label text="Operador 1:" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
          <font>
-            <Font size="30.0" />
+            <Font size="25.0" />
          </font>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
       </Label>
       <Label text="Operador 2:" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
          <font>
-            <Font size="30.0" />
+            <Font size="25.0" />
          </font>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
       </Label>
       <Label text="CULADORA" GridPane.columnIndex="1">
          <font>
@@ -44,35 +53,72 @@
       </Label>
       <Label text="Resultado:" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
          <font>
-            <Font size="30.0" />
+            <Font size="25.0" />
          </font>
+         <padding>
+            <Insets right="20.0" />
+         </padding>
       </Label>
       <TextField fx:id="txtOperador1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
       <TextField fx:id="txtOperador2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
       <TextField fx:id="txtResultado" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-      <Button fx:id="btnCalcular" alignment="CENTER" mnemonicParsing="false" onAction="#calcular" text="Calcular" textFill="#063ec4" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+      <Button fx:id="btnCalcular" alignment="CENTER" mnemonicParsing="false" onAction="#calcular" text="Calcular" textAlignment="CENTER" textFill="#063ec4" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <GridPane.margin>
-            <Insets />
+            <Insets left="150.0" />
          </GridPane.margin>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
       </Button>
       <Label text="CAL" GridPane.halignment="RIGHT">
          <font>
             <Font size="40.0" />
          </font>
+         <graphic>
+            <ImageView fitHeight="52.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../src/images/image-calc.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Label>
-      <FlowPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+      <FlowPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4">
          <children>
-            <RadioButton fx:id="rbSumar" mnemonicParsing="false" text="Sumar">
+            <RadioButton fx:id="rbSumar" mnemonicParsing="false" prefHeight="17.0" prefWidth="80.0" text="Sumar">
                <toggleGroup>
                   <ToggleGroup fx:id="tgOperacion" />
-               </toggleGroup></RadioButton>
-            <RadioButton fx:id="rbRestar" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Restar" toggleGroup="$tgOperacion" />
+               </toggleGroup>
+               <FlowPane.margin>
+                  <Insets left="350.0" top="10.0" />
+               </FlowPane.margin>
+               <padding>
+                  <Insets left="-100.0" />
+               </padding></RadioButton>
+            <RadioButton fx:id="rbRestar" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" text="Restar" toggleGroup="$tgOperacion">
+               <FlowPane.margin>
+                  <Insets />
+               </FlowPane.margin>
+               <padding>
+                  <Insets top="10.0" />
+               </padding></RadioButton>
          </children>
       </FlowPane>
-      <FlowPane prefHeight="200.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="5">
+      <FlowPane prefHeight="76.0" prefWidth="601.0" GridPane.columnSpan="2" GridPane.rowIndex="5">
          <children>
-            <RadioButton fx:id="rbMultiplicar" mnemonicParsing="false" text="Multiplicar" toggleGroup="$tgOperacion" />
-            <RadioButton fx:id="rbDividir" mnemonicParsing="false" text="Dividir" toggleGroup="$tgOperacion" />
+            <RadioButton fx:id="rbMultiplicar" mnemonicParsing="false" prefHeight="17.0" prefWidth="79.0" text="Multiplicar" toggleGroup="$tgOperacion">
+               <FlowPane.margin>
+                  <Insets left="350.0" top="10.0" />
+               </FlowPane.margin>
+               <padding>
+                  <Insets left="-100.0" />
+               </padding></RadioButton>
+            <RadioButton fx:id="rbDividir" mnemonicParsing="false" text="Dividir" toggleGroup="$tgOperacion">
+               <FlowPane.margin>
+                  <Insets />
+               </FlowPane.margin>
+               <padding>
+                  <Insets top="10.0" />
+               </padding></RadioButton>
          </children>
       </FlowPane>
    </children>
